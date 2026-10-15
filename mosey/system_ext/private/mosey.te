@@ -1,8 +1,13 @@
 typeattribute mosey_server coredomain;
 
-add_service(mosey_server, mosey_service)
+allow { mosey_server system_server } mosey_service:service_manager { add find };
+
+neverallow { domain -mosey_server -system_server } mosey_service:service_manager add;
 
 binder_use(mosey_server)
+
+# Forward adapted requests to the unchanged native backend.
+binder_call(system_server, mosey_server)
 
 init_daemon_domain(mosey_server)
 
