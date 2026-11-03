@@ -18,6 +18,7 @@ vendor.camera.skip_unconfigure.packagelist  u:object_r:camera2_extensions_prop:s
 
 # Custom legal URL
 ro.lineagelegal.url                    u:object_r:legal_url_prop:s0
+ro.evolutionlegal.url                  u:object_r:legal_url_prop:s0
 
 # Custom version
 ro.lineage.version                     u:object_r:custom_version_prop:s0
@@ -25,6 +26,9 @@ ro.lineage.display.version             u:object_r:custom_version_prop:s0
 ro.lineage.build.version               u:object_r:custom_version_prop:s0
 ro.lineage.releasetype                 u:object_r:custom_version_prop:s0
 ro.lineage.device                      u:object_r:custom_version_prop:s0
+# Evolution X and mod version stay hidden from third-party apps to limit fingerprinting
+ro.evolution.                          u:object_r:custom_version_prop:s0
+ro.modversion                          u:object_r:custom_version_prop:s0
 
 # Columbus ApSensor
 persist.columbus.use_ap_sensor         u:object_r:system_prop:s0

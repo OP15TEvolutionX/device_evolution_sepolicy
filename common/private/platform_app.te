@@ -64,3 +64,6 @@ allow platform_app system_data_file:dir r_dir_perms;
 allow platform_app system_data_file:file r_file_perms;
 allow platform_app system_userdir_file:dir r_dir_perms;
 allow platform_app system_userdir_file:file r_file_perms;
+
+# Allow SystemUI and launchers to read the ROM version
+get_prop(platform_app, custom_version_prop)
